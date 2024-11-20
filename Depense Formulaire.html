@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group small {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Nouvelle Dépense ? Nous La Prenons En Charge !</h1>
+        <form action="/envoyer" method="post">
+            <fieldset>
+                <legend><strong>Informations de la dépense</strong></legend>
+
+                <!-- Champ Identification de dépense -->
+                <div class="form-group">
+                    <label for="depense">Identification de dépense :</label>
+                    <input type="number" id="depense" name="depense" required placeholder="Entrez l'identification de la dépense">
+                </div>
+
+                <!-- Champ Identification d'utilisateur -->
+                <div class="form-group">
+                    <label for="utilisateur">Identification d'utilisateur :</label>
+                    <input type="number" id="utilisateur" name="utilisateur" required placeholder="Entrez l'identification de l'utilisateur">
+                </div>
+
+                <!-- Champ Identification de catégorie -->
+                <div class="form-group">
+                    <label for="categorie">Identification de catégorie :</label>
+                    <input type="number" id="categorie" name="categorie" required placeholder="Entrez l'identification de la catégorie">
+                </div>
+
+                <!-- Champ Montant -->
+                <div class="form-group">
+                    <label for="montant">Montant :</label>
+                    <input type="number" id="montant" name="montant" required placeholder="Entrez le montant" min="0" step="0.01">
+                </div>
+
+                <!-- Champ Date de création -->
+                <div class="form-group">
+                    <label for="date-creation">Date de création :</label>
+                    <input type="date" id="date-creation" name="date-creation" required>
+                </div>
+
+                <!-- Champ Date de mise à jour -->
+                <div class="form-group">
+                    <label for="date-de-mise-a-jour">Date de mise à jour :</label>
+                    <input type="date" id="date-de-mise-a-jour" name="date-de-mise-a-jour" required>
+                </div>
+            </fieldset>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="description">Description :</label>
+                <textarea id="description" name="description" rows="4" required placeholder="Entrez une description détaillée"></textarea>
+            </div>
+
+            <!-- Bouton d'envoi -->
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</body>
+</html>
